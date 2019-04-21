@@ -4,8 +4,8 @@
 #include <Bounce2.h>
 
 #define BUTTON_PIN 4
-#define DISPLAY_CLK 0
-#define DISPLAY_DIO 1
+#define DISPLAY_CLK 1
+#define DISPLAY_DIO 0
 #define TIMER_SECONDS 150
 
 Bounce button = Bounce();
