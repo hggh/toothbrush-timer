@@ -1,0 +1,196 @@
+EESchema Schematic File Version 4
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_Microchip_ATtiny:ATtiny85-20PU U?
+U 1 1 5CBD84C4
+P 4550 3100
+F 0 "U?" H 4020 3146 50  0000 R CNN
+F 1 "ATtiny85-20PU" H 4020 3055 50  0000 R CNN
+F 2 "Package_DIP:DIP-8_W7.62mm" H 4550 3100 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/atmel-2586-avr-8-bit-microcontroller-attiny25-attiny45-attiny85_datasheet.pdf" H 4550 3100 50  0001 C CNN
+	1    4550 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L ht7333-a:HT7333-A L?
+U 1 1 5CBD85C6
+P 2550 3400
+F 0 "L?" H 2600 3797 60  0000 C CNN
+F 1 "HT7333-A" H 2600 3691 60  0000 C CNN
+F 2 "" H 2550 3400 60  0000 C CNN
+F 3 "" H 2550 3400 60  0000 C CNN
+	1    2550 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5CBD878F
+P 4700 2200
+F 0 "C?" V 4448 2200 50  0000 C CNN
+F 1 "C" V 4539 2200 50  0000 C CNN
+F 2 "" H 4738 2050 50  0001 C CNN
+F 3 "~" H 4700 2200 50  0001 C CNN
+	1    4700 2200
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5CBD884B
+P 4850 2350
+F 0 "#PWR?" H 4850 2100 50  0001 C CNN
+F 1 "GND" H 4855 2177 50  0000 C CNN
+F 2 "" H 4850 2350 50  0001 C CNN
+F 3 "" H 4850 2350 50  0001 C CNN
+	1    4850 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4850 2200 4850 2350
+Wire Wire Line
+	4550 2200 4550 2250
+$Comp
+L Device:CP C?
+U 1 1 5CBD88F1
+P 3300 3400
+F 0 "C?" H 3418 3446 50  0000 L CNN
+F 1 "10uF" H 3418 3355 50  0000 L CNN
+F 2 "" H 3338 3250 50  0001 C CNN
+F 3 "~" H 3300 3400 50  0001 C CNN
+	1    3300 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP C?
+U 1 1 5CBD893B
+P 1950 3550
+F 0 "C?" H 2068 3596 50  0000 L CNN
+F 1 "10uF" H 2068 3505 50  0000 L CNN
+F 2 "" H 1988 3400 50  0001 C CNN
+F 3 "~" H 1950 3550 50  0001 C CNN
+	1    1950 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5CBD89F0
+P 3300 3700
+F 0 "#PWR?" H 3300 3450 50  0001 C CNN
+F 1 "GND" H 3305 3527 50  0000 C CNN
+F 2 "" H 3300 3700 50  0001 C CNN
+F 3 "" H 3300 3700 50  0001 C CNN
+	1    3300 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3050 3250 3300 3250
+Wire Wire Line
+	3300 3250 3300 2250
+Connection ~ 3300 3250
+Wire Wire Line
+	2700 3700 3300 3700
+Wire Wire Line
+	3300 3700 3300 3550
+Connection ~ 3300 3700
+Wire Wire Line
+	2700 3700 1950 3700
+Connection ~ 2700 3700
+Wire Wire Line
+	1950 3400 2150 3400
+$Comp
+L Device:Battery_Cell BT?
+U 1 1 5CBD8BD8
+P 1500 3600
+F 0 "BT?" H 1618 3696 50  0000 L CNN
+F 1 "9V" H 1618 3605 50  0000 L CNN
+F 2 "" V 1500 3660 50  0001 C CNN
+F 3 "~" V 1500 3660 50  0001 C CNN
+	1    1500 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1500 3400 1950 3400
+Connection ~ 1950 3400
+Wire Wire Line
+	1500 3700 1950 3700
+Connection ~ 1950 3700
+Wire Wire Line
+	3300 3700 4550 3700
+Wire Wire Line
+	3300 2250 4550 2250
+Connection ~ 4550 2250
+Wire Wire Line
+	4550 2250 4550 2500
+$Comp
+L Switch:SW_Push SW?
+U 1 1 5CBD91DC
+P 5600 3200
+F 0 "SW?" H 5600 3393 50  0000 C CNN
+F 1 "B" H 5600 3394 50  0001 C CNN
+F 2 "" H 5600 3400 50  0001 C CNN
+F 3 "" H 5600 3400 50  0001 C CNN
+	1    5600 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5CBD9352
+P 6050 3200
+F 0 "#PWR?" H 6050 2950 50  0001 C CNN
+F 1 "GND" H 6055 3027 50  0000 C CNN
+F 2 "" H 6050 3200 50  0001 C CNN
+F 3 "" H 6050 3200 50  0001 C CNN
+	1    6050 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6050 3200 5800 3200
+Wire Wire Line
+	5400 3200 5150 3200
+NoConn ~ 5150 3300
+NoConn ~ 5150 3000
+NoConn ~ 5150 3100
+$Comp
+L Connector:Conn_01x04_Female J?
+U 1 1 5CBDA5B4
+P 5850 2700
+F 0 "J?" H 5877 2676 50  0000 L CNN
+F 1 "display" H 5877 2585 50  0000 L CNN
+F 2 "" H 5850 2700 50  0001 C CNN
+F 3 "~" H 5850 2700 50  0001 C CNN
+	1    5850 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5150 2800 5650 2800
+Wire Wire Line
+	5150 2900 5650 2900
+Wire Wire Line
+	4850 2200 5650 2200
+Wire Wire Line
+	5650 2200 5650 2600
+Connection ~ 4850 2200
+Wire Wire Line
+	4550 2250 4550 2200
+Wire Wire Line
+	4550 1900 5400 1900
+Wire Wire Line
+	5400 1900 5400 2700
+Wire Wire Line
+	5400 2700 5650 2700
+Connection ~ 4550 2200
+Wire Wire Line
+	4550 2200 4550 1900
+$EndSCHEMATC
