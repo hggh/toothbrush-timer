@@ -17,8 +17,8 @@ difference() {
     cube([52.6, 47.6, 27.6], center=true);
     
     // spare out back side to load battery
-    translate([- 25.0, -15, 13]) {
-        cube([50, 35, 5]);
+    translate([- 26.3, -15, 13]) {
+        cube([52.6,, 35, 5]);
     }
 }
 
