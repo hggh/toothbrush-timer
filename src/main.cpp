@@ -2,6 +2,7 @@
 #include <avr/sleep.h>
 #include <TM1637Display.h>
 #include <Bounce2.h>
+#include <Voltage.h>
 
 #define BUTTON_PIN 4
 #define DISPLAY_CLK 1
@@ -10,12 +11,21 @@
 
 Bounce button = Bounce();
 TM1637Display display(DISPLAY_CLK, DISPLAY_DIO);
+Voltage voltage;
 
 short button_mode = 0;
 volatile int timer_countdown = 0;
 volatile int last_timer_countdown = 0;
 volatile unsigned long wakup_time = 0;
 volatile short goto_sleep_now = 0;
+
+const uint8_t LOW_BATT[] = {
+  SEG_D | SEG_E | SEG_F,
+  SEG_A | SEG_B | SEG_C | SEG_D | SEG_E | SEG_F,
+  0x00,
+  SEG_A | SEG_B | SEG_C | SEG_D | SEG_E | SEG_F | SEG_G
+};
+const double battery_low = 2.7;
 
 ISR(PCINT0_vect) {
   wakup_time = millis();
@@ -71,7 +81,7 @@ void enable_display() {
 }
 
 void setup() {
-  ADCSRA &=(~(1 << ADEN));
+  voltage.init();
   pinMode(BUTTON_PIN, INPUT_PULLUP);
   button.attach(BUTTON_PIN);
   button.interval(25);
@@ -97,6 +107,10 @@ void loop() {
   }
 
   if (button_mode == 1) {
+    if (battery_low > (double)voltage.read()) {
+      display.setSegments(LOW_BATT);
+      delay(1000);
+    }
     timer_countdown = TIMER_SECONDS;
     button_mode = 0;
     setup_timer1();
